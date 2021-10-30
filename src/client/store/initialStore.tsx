@@ -4,5 +4,6 @@ export const initialStore: IStore = {
   todos: [{
     description: 'descr',
     title: 'title',
+    id: 'qqwe'
   }],
 };
