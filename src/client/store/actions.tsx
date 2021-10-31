@@ -7,3 +7,10 @@ export function AddTodo(payload: ITodo): AllActions {
     payload,
   };
 }
+
+export function RemoveTodo(payload: string): AllActions {
+  return {
+    type: Actions.REMOVE_TODO,
+    payload,
+  };
+}
