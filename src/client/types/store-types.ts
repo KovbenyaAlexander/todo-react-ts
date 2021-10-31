@@ -1,7 +1,6 @@
 export interface ITodo {
-  title: string
-  description: string
-   id: string
+  text: string
+  id: string
 }
 
 export interface IStore {

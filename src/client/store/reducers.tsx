@@ -8,8 +8,7 @@ export type AllActions =
 export default function reducer(state: IStore = initialStore, action: AllActions) {
   switch (action.type) {
     case Actions.ADD_TODO:
-      return { ...state };
-
+      return { ...state, todos: [...state.todos, action.payload] };
     default:
       return state;
   }

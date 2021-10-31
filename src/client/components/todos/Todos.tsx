@@ -11,7 +11,6 @@ export default function Todos(): JSX.Element {
       {todos.map((todo: ITodo) => (
         <Todo key={todo.id} todo={todo} />
       ))}
-      sdf
     </div>
   );
 }
