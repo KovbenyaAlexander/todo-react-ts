@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ITodo } from '../../types';
-import { RemoveTodo } from '../../store/actions';
+import { RemoveTodo, ToggleDone } from '../../store/actions';
 
 export default function Todo({ todo }: { todo: ITodo }): JSX.Element {
   const dispatch = useDispatch();
@@ -10,10 +12,17 @@ export default function Todo({ todo }: { todo: ITodo }): JSX.Element {
     dispatch(RemoveTodo(todo.id));
   };
 
+  const onToggleDoneHandler = () => {
+    dispatch(ToggleDone(todo.id));
+  };
+
   return (
-    <div>
+    <div onClick={onToggleDoneHandler}>
       {todo.text}
+      <br />
+      {todo.isDone ? 'done' : 'not done'}
       <button onClick={removeTodoHandler} type="button">Remove</button>
+      <hr />
     </div>
   );
 }

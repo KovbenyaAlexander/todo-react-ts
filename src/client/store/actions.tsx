@@ -14,3 +14,10 @@ export function RemoveTodo(payload: string): AllActions {
     payload,
   };
 }
+
+export function ToggleDone(payload: string): AllActions {
+  return {
+    type: Actions.TOGGLE_DONE,
+    payload,
+  };
+}

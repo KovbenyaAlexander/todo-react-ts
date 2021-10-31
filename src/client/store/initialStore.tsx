@@ -4,5 +4,6 @@ export const initialStore: IStore = {
   todos: [{
     text: 'text',
     id: 'qqwe',
+    isDone: false,
   }],
 };

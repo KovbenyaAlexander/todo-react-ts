@@ -15,9 +15,12 @@ export default function Form(): JSX.Element {
   const onSubmitHandler = (e: React.FormEvent): void => {
     e.preventDefault();
 
+    if (!inputValue) return;
+
     const newTodo: ITodo = {
       text: inputValue,
       id: uuidv4(),
+      isDone: false,
     };
 
     dispatch(AddTodo(newTodo));
