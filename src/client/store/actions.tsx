@@ -22,9 +22,9 @@ export function ToggleDone(payload: string): AllActions {
   };
 }
 
-export function SetSearchText(payload: string): AllActions {
+export function SortByString(payload: string): AllActions {
   return {
-    type: Actions.SET_SEARCH_TEXT,
+    type: Actions.SORT_BY_STRING,
     payload,
   };
 }
