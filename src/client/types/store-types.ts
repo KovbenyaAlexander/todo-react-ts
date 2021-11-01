@@ -6,4 +6,6 @@ export interface ITodo {
 
 export interface IStore {
   todos: ITodo[]
+  visibleTodos: ITodo[]
+  searchText: string
 }

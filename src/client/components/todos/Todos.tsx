@@ -4,7 +4,7 @@ import { IStore, ITodo } from '../../types';
 import Todo from '../todo/Todo';
 
 export default function Todos(): JSX.Element {
-  const todos = useSelector((store: IStore) => store.todos);
+  const todos = useSelector((store: IStore) => store.visibleTodos);
 
   return (
     <div>

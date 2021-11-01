@@ -18,9 +18,11 @@ export default function Todo({ todo }: { todo: ITodo }): JSX.Element {
 
   return (
     <div onClick={onToggleDoneHandler}>
-      {todo.text}
-      <br />
-      {todo.isDone ? 'done' : 'not done'}
+      <span>{todo.text}</span>
+      <span>
+        {' '}
+        {todo.isDone ? 'done' : 'not done'}
+      </span>
       <button onClick={removeTodoHandler} type="button">Remove</button>
       <hr />
     </div>

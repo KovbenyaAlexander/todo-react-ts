@@ -4,6 +4,8 @@ export enum Actions {
   ADD_TODO = 'ADD_TODO',
   REMOVE_TODO = 'REMOVE_TODO',
   TOGGLE_DONE = 'TOGGLE_DONE',
+  SET_SEARCH_TEXT = 'SET_SEARCH_TEXT',
+
 }
 
 export interface AddTodo {

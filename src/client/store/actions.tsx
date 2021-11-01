@@ -21,3 +21,10 @@ export function ToggleDone(payload: string): AllActions {
     payload,
   };
 }
+
+export function SetSearchText(payload: string): AllActions {
+  return {
+    type: Actions.SET_SEARCH_TEXT,
+    payload,
+  };
+}

@@ -5,9 +5,10 @@ import { initialStore } from './initialStore';
 export type AllActions =
   { type: typeof Actions.ADD_TODO; payload: ITodo } |
   { type: typeof Actions.REMOVE_TODO; payload: string } |
-  { type: typeof Actions.TOGGLE_DONE; payload: string };
+  { type: typeof Actions.TOGGLE_DONE; payload: string } |
+  { type: typeof Actions.SET_SEARCH_TEXT; payload: string };
+
 export default function reducer(state: IStore = initialStore, action: AllActions): IStore {
-  console.log(action);
   switch (action.type) {
     case Actions.ADD_TODO:
       return { ...state, todos: [...state.todos, action.payload] };
@@ -24,6 +25,17 @@ export default function reducer(state: IStore = initialStore, action: AllActions
             };
           }
           return todo;
+        }),
+      };
+    case Actions.SET_SEARCH_TEXT:
+      return {
+        ...state,
+        searchText: action.payload,
+        visibleTodos: state.todos.filter((todo: ITodo) => {
+          if (todo.text.slice(0, action.payload.length) === action.payload) {
+            return true;
+          }
+          return false;
         }),
       };
     default:
