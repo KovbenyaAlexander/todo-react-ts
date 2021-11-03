@@ -36,6 +36,10 @@ export const initialStore: IStore = {
       isDone: false,
     },
   ],
-  searchText: 'aa',
-
+  searchSettings: {
+    isShowAllTodo: true,
+    isShowActiveTodo: false,
+    isShowCompletedTodo: false,
+    searchText: '',
+  },
 };

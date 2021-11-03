@@ -1,11 +1,11 @@
-import { ITodo } from './store-types';
+import { ITodo, ISearchSettings } from './store-types';
 
 export enum Actions {
   ADD_TODO = 'ADD_TODO',
   REMOVE_TODO = 'REMOVE_TODO',
   TOGGLE_DONE = 'TOGGLE_DONE',
-  SORT_BY_STRING = 'SORT_BY_STRING',
-
+  UPDATE_SORT_SETTINGS = 'UPDATE_SORT_SETTINGS',
+  UPDATE_VISIBLE_TODOS = 'UPDATE_VISIBLE_TODOS',
 }
 
 export interface AddTodo {

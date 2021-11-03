@@ -1,4 +1,4 @@
-import { ITodo, Actions } from '../types';
+import { ITodo, Actions, ISearchSettings } from '../types';
 import { AllActions } from './reducers';
 
 export function AddTodo(payload: ITodo): AllActions {
@@ -22,9 +22,15 @@ export function ToggleDone(payload: string): AllActions {
   };
 }
 
-export function SortByString(payload: string): AllActions {
+export function UpdateSortSettings(payload: ISearchSettings): AllActions {
   return {
-    type: Actions.SORT_BY_STRING,
+    type: Actions.UPDATE_SORT_SETTINGS,
     payload,
+  };
+}
+
+export function UpdateVisibleTodos(): AllActions {
+  return {
+    type: Actions.UPDATE_VISIBLE_TODOS,
   };
 }

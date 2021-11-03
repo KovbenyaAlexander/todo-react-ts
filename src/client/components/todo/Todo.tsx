@@ -3,17 +3,19 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ITodo } from '../../types';
-import { RemoveTodo, ToggleDone } from '../../store/actions';
+import { RemoveTodo, ToggleDone, UpdateVisibleTodos } from '../../store/actions';
 
 export default function Todo({ todo }: { todo: ITodo }): JSX.Element {
   const dispatch = useDispatch();
 
   const removeTodoHandler = () => {
     dispatch(RemoveTodo(todo.id));
+    dispatch(UpdateVisibleTodos());
   };
 
   const onToggleDoneHandler = () => {
     dispatch(ToggleDone(todo.id));
+    dispatch(UpdateVisibleTodos());
   };
 
   return (

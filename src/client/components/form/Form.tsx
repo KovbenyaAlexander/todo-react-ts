@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { AddTodo } from '../../store/actions';
+import { AddTodo, UpdateVisibleTodos } from '../../store/actions';
 import { ITodo } from '../../types';
 
 export default function Form(): JSX.Element {
@@ -24,6 +24,7 @@ export default function Form(): JSX.Element {
     };
 
     dispatch(AddTodo(newTodo));
+    dispatch(UpdateVisibleTodos());
     setInputValue('');
   };
 
