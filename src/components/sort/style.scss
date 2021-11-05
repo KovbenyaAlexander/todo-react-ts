@@ -1,0 +1,11 @@
+.sort{
+  width: 400px;
+  background-color: lawngreen;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  &__info, &__search{
+    width: 120px;
+  }
+}

@@ -1,0 +1,16 @@
+.form{
+  display: flex;
+  justify-content: center;
+
+  &__input{
+    width: 360px;
+    background-color: #25273c;
+    outline: none;
+    color: #7c7e93;
+    margin-top: 41px;
+    height: 46px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 50px;
+  }
+}

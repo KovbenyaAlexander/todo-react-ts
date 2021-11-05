@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { AddTodo, UpdateVisibleTodos } from '../../store/actions';
 import { ITodo } from '../../types';
+import './style.scss';
 
 export default function Form(): JSX.Element {
   const [inputValue, setInputValue] = useState('');
@@ -29,9 +30,8 @@ export default function Form(): JSX.Element {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <input value={inputValue} onChange={onInputChange} />
-      <button type="submit"> Add </button>
+    <form className="form" onSubmit={onSubmitHandler}>
+      <input className="form__input" value={inputValue} onChange={onInputChange} placeholder="Create a new todo..." />
     </form>
   );
 }

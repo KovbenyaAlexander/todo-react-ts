@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { UpdateSortSettings, UpdateVisibleTodos } from '../../store/actions';
 import { IStore, ITodo } from '../../types';
+import './style.scss';
 
 export default function Sort(): JSX.Element {
   const dispatch = useDispatch();
@@ -28,12 +29,14 @@ export default function Sort(): JSX.Element {
   };
 
   return (
-    <div>
-      <span>{`${activeTodos.length} items left`}</span>
-      <input value={searchSettings.searchText} onChange={onInputChange} />
-      <button data-btntype="All" onClick={onClickButtonHandler} type="button">All</button>
-      <button data-btntype="Active" onClick={onClickButtonHandler} type="button">Active</button>
-      <button data-btntype="Completed" onClick={onClickButtonHandler} type="button">Completed</button>
+    <div className="sort">
+      <span className="sort__info">{`${activeTodos.length} items left`}</span>
+      <div>
+        <button data-btntype="All" onClick={onClickButtonHandler} type="button">All</button>
+        <button data-btntype="Active" onClick={onClickButtonHandler} type="button">Active</button>
+        <button data-btntype="Completed" onClick={onClickButtonHandler} type="button">Completed</button>
+      </div>
+      <input className="sort__search" value={searchSettings.searchText} onChange={onInputChange} />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ITodo } from '../../types';
 import { RemoveTodo, ToggleDone, UpdateVisibleTodos } from '../../store/actions';
+import './style.scss';
 
 export default function Todo({ todo }: { todo: ITodo }): JSX.Element {
   const dispatch = useDispatch();
@@ -19,14 +20,12 @@ export default function Todo({ todo }: { todo: ITodo }): JSX.Element {
   };
 
   return (
-    <div onClick={onToggleDoneHandler}>
-      <span>{todo.text}</span>
-      <span>
-        {' '}
-        {todo.isDone ? 'done' : 'not done'}
-      </span>
+    <div className="todo__item">
+      <div>
+        <input type="checkbox" checked={todo.isDone} onChange={onToggleDoneHandler} />
+        <span>{todo.text}</span>
+      </div>
       <button onClick={removeTodoHandler} type="button">Remove</button>
-      <hr />
     </div>
   );
 }
