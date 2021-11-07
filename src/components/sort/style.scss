@@ -1,11 +1,53 @@
 .sort{
-  width: 400px;
-  background-color: lawngreen;
+  width: 410px;
+  height: 40px;
   margin: 0 auto;
+  padding: 0 10px 0 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: #25273c;
+  color: #7c7e93;
+  border-top: 1px solid #7c7e93;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 13px;
 
   &__info, &__search{
-    width: 120px;
+    width: 110px;
+  }
+
+  &__search{
+    border: none;
+    background-color: #25273c;
+    color: #7c7e93;
+  }
+
+  &__btn{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    cursor: pointer;
+    color: #7c7e93;
+    font-family: 'Poppins', sans-serif;
+    &-active{
+      color: rgba(72,119,225)
+    }
+    &:hover{
+      color: rgba(72,119,225)
+    }
+  }
+
+  &__by-type{
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+  }
+
+  input{
+    border-bottom-right-radius: 5px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
   }
 }

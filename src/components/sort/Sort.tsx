@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { UpdateSortSettings, UpdateVisibleTodos } from '../../store/actions';
 import { IStore, ITodo } from '../../types';
@@ -7,9 +7,9 @@ import './style.scss';
 export default function Sort(): JSX.Element {
   const dispatch = useDispatch();
 
+  const [currentSortType, setCurrentSortType] = useState('All');
   const searchSettings = useSelector((store: IStore) => store.searchSettings);
   const todos = useSelector((store: IStore) => store.todos);
-
   const activeTodos = todos.filter((todo: ITodo) => !todo.isDone);
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -26,17 +26,49 @@ export default function Sort(): JSX.Element {
       [`isShow${e.target.dataset.btntype}Todo`]: true,
     }));
     dispatch(UpdateVisibleTodos());
+    setCurrentSortType(e.target.dataset.btntype);
   };
 
   return (
     <div className="sort">
       <span className="sort__info">{`${activeTodos.length} items left`}</span>
-      <div>
-        <button data-btntype="All" onClick={onClickButtonHandler} type="button">All</button>
-        <button data-btntype="Active" onClick={onClickButtonHandler} type="button">Active</button>
-        <button data-btntype="Completed" onClick={onClickButtonHandler} type="button">Completed</button>
+      <div className="sort__by-type">
+
+        <button
+          data-btntype="All"
+          onClick={onClickButtonHandler}
+          className={currentSortType === 'All' ? 'sort__btn sort__btn-active' : 'sort__btn'}
+          type="button"
+        >
+          All
+        </button>
+
+        <button
+          data-btntype="Active"
+          onClick={onClickButtonHandler}
+          className={currentSortType === 'Active' ? 'sort__btn sort__btn-active' : 'sort__btn'}
+          type="button"
+        >
+          Active
+        </button>
+
+        <button
+          data-btntype="Completed"
+          onClick={onClickButtonHandler}
+          className={currentSortType === 'Completed' ? 'sort__btn sort__btn-active' : 'sort__btn'}
+          type="button"
+        >
+          Completed
+        </button>
       </div>
-      <input className="sort__search" value={searchSettings.searchText} onChange={onInputChange} />
+
+      <input
+        className="sort__search"
+        value={searchSettings.searchText}
+        onChange={onInputChange}
+        placeholder="Type to search"
+      />
+
     </div>
   );
 }

@@ -1,7 +1,18 @@
-.todo__item{
-  width: 400px;
-  background-color: greenyellow;
-  margin: 0 auto;
+.todo{
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  background-color: #25273c;
+  outline: none;
+  color: #7c7e93;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid grey;
+  &__icon{
+    cursor: pointer;
+  }
+  
+  &__icon:hover{
+    color: white
+  }
 }
