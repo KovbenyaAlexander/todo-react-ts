@@ -1,18 +1,85 @@
 .todo{
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  width: 90%;
+  padding: 0px 5% 0px 5%;
   background-color: #25273c;
   outline: none;
   color: #7c7e93;
   height: 50px;
   border: none;
-  border-bottom: 1px solid grey;
-  &__icon{
+  border-bottom: 1px solid #7c7e9379;
+
+  &__remove-icon{
     cursor: pointer;
+    &:hover{
+      color: red;
+      transition: all .3s ease-out;
+    }
   }
-  
-  &__icon:hover{
-    color: white
+
+  $font-size: 1.5em;
+  $ratio: 1;
+  $size: $ratio + em;
+  $ratio: $ratio;
+  $gutter: 5px;
+  $stroke-dash: 270;
+  $stroke: (
+    thickness: $gutter/2,
+    style: solid,
+    color: lighten(#1C7EA4, 25%)
+  );
+  $mark-ischecked: (
+    stroke-dashoffset: 0
+  ); 
+  $label-ischecked: (); 
+
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    position: absolute;
+    opacity: 0;
+
+    &:checked ~ label {
+      @each $key, $value in $label-ischecked {
+        #{$key}: #{$value};
+      }
+    }
+
+    &:checked ~ label svg path {
+      @each $key, $value in $mark-ischecked {
+        #{$key}: #{$value};
+      }
+    }
+  }
+
+  input[type="checkbox"] ~ label {
+    font-size: $font-size;
+    line-height: $ratio;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: relative;
+    cursor: pointer;
+    color: white;
+  }
+
+  input[type="checkbox"] ~ label svg {
+    width: $size;
+    height: $size;
+    border: zip(map-values($stroke)...);
+    margin-right: $gutter;
+
+    path {
+      transition: stroke-dashoffset 440ms cubic-bezier(.69,.35,.63,.84);
+      fill: none;
+      stroke: green;
+      stroke-dasharray: $stroke-dash;
+      stroke-dashoffset: $stroke-dash;
+      stroke-width: $gutter;
+    }
   }
 }
+
+

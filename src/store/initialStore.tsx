@@ -3,7 +3,7 @@ import { IStore } from '../types/store-types';
 export const initialStore: IStore = {
   todos: [
     {
-      text: 'abc',
+      text: "Drag'n'Drop",
       id: '1',
       isDone: false,
     },
@@ -21,7 +21,7 @@ export const initialStore: IStore = {
   ],
   visibleTodos: [
     {
-      text: 'abc',
+      text: "Drag'n'Drop",
       id: '1',
       isDone: false,
     },

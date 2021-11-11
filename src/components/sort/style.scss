@@ -31,7 +31,8 @@
     color: #7c7e93;
     font-family: 'Poppins', sans-serif;
     &-active{
-      color: rgba(72,119,225)
+      color: rgba(72,119,225);
+      font-weight: bold;
     }
     &:hover{
       color: rgba(72,119,225)
