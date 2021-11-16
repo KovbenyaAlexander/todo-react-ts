@@ -17,13 +17,11 @@ export default function reducer(state: IStore = initialStore, action: AllActions
       return {
         ...state,
         todos: [...state.todos, action.payload],
-        // visibleTodos: [...state.todos, action.payload],
       };
     case Actions.REMOVE_TODO:
       return {
         ...state,
         todos: state.todos.filter((todo: ITodo) => todo.id !== action.payload),
-        // visibleTodos: state.visibleTodos.filter((todo: ITodo) => todo.id !== action.payload),
       };
     case Actions.TOGGLE_DONE:
       return {
@@ -47,7 +45,9 @@ export default function reducer(state: IStore = initialStore, action: AllActions
       if (state.searchSettings.isShowAllTodo) {
         return {
           ...state,
-          visibleTodos: state.todos.filter((todo: ITodo) => state.searchSettings.searchText === todo.text.slice(0, state.searchSettings.searchText.length)),
+          visibleTodos: state.todos.filter(
+            (todo: ITodo) => state.searchSettings.searchText === todo.text.slice(0, state.searchSettings.searchText.length).toUpperCase(),
+          ),
         };
       }
 
@@ -55,7 +55,8 @@ export default function reducer(state: IStore = initialStore, action: AllActions
         return {
           ...state,
           visibleTodos: state.todos.filter((todo: ITodo) => {
-            if (state.searchSettings.searchText === todo.text.slice(0, state.searchSettings.searchText.length) && !todo.isDone) {
+            if (state.searchSettings.searchText === todo.text.slice(0, state.searchSettings.searchText.length).toUpperCase()
+            && !todo.isDone) {
               return true;
             }
             return false;
@@ -67,7 +68,8 @@ export default function reducer(state: IStore = initialStore, action: AllActions
         return {
           ...state,
           visibleTodos: state.todos.filter((todo: ITodo) => {
-            if (state.searchSettings.searchText === todo.text.slice(0, state.searchSettings.searchText.length) && todo.isDone) {
+            if (state.searchSettings.searchText === todo.text.slice(0, state.searchSettings.searchText.length).toUpperCase()
+            && todo.isDone) {
               return true;
             }
             return false;

@@ -1,15 +1,22 @@
+@import '../../variables.scss';
+
 .todo{
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
   padding: 0px 5% 0px 5%;
-  background-color: #25273c;
+  background-color: $darkGrey;
   outline: none;
-  color: #7c7e93;
+  color: $grey;
   height: 50px;
   border: none;
-  border-bottom: 1px solid #7c7e9379;
+  border-bottom: 1px solid $grey;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #1b1d386e;
+  }
 
   &__remove-icon{
     cursor: pointer;
@@ -19,7 +26,18 @@
     }
   }
 
-  $font-size: 1.5em;
+  &-inactive{
+    color: $grey;
+    text-decoration: line-through;
+  }
+
+  span{
+    padding-left: 5px;
+  }
+
+  // checkbox
+
+  $font-size: 1.2em;
   $ratio: 1;
   $size: $ratio + em;
   $ratio: $ratio;
@@ -28,7 +46,7 @@
   $stroke: (
     thickness: $gutter/2,
     style: solid,
-    color: lighten(#1C7EA4, 25%)
+    color: lighten($lightBlue, 25%)
   );
   $mark-ischecked: (
     stroke-dashoffset: 0

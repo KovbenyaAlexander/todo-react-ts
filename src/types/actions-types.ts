@@ -1,4 +1,4 @@
-import { ITodo, ISearchSettings } from './store-types';
+import { ITodo } from './store-types';
 
 export enum Actions {
   ADD_TODO = 'ADD_TODO',

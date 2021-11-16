@@ -1,17 +1,23 @@
+@import '../../variables.scss';
+
 .sort{
-  width: 410px;
+  width: 470px;
   height: 40px;
   margin: 0 auto;
   padding: 0 10px 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #25273c;
-  color: #7c7e93;
-  border-top: 1px solid #7c7e93;
+  background-color: $darkGrey;
+  color: $grey;
+  border-top: 1px solid $grey;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: 13px;
+
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.7);
 
   &__info, &__search{
     width: 110px;
@@ -19,8 +25,8 @@
 
   &__search{
     border: none;
-    background-color: #25273c;
-    color: #7c7e93;
+    background-color: $darkGrey;
+    color: $grey;
   }
 
   &__btn{
@@ -28,21 +34,21 @@
     border: none;
     padding: 0!important;
     cursor: pointer;
-    color: #7c7e93;
+    color: $grey;
     font-family: 'Poppins', sans-serif;
     &-active{
-      color: rgba(72,119,225);
+      color: $blue;
       font-weight: bold;
     }
     &:hover{
-      color: rgba(72,119,225)
+      color: $blue;
     }
   }
 
   &__by-type{
     display: flex;
     justify-content: space-between;
-    width: 140px;
+    width: 160px;
   }
 
   input{

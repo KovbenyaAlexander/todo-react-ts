@@ -20,11 +20,11 @@ export default function Todo({ todo }: { todo: ITodo }): JSX.Element {
   };
 
   return (
-    <div className="todo">
+    <div className="todo" onClick={onToggleDoneHandler}>
 
-      <input id={todo.id} type="checkbox" checked={todo.isDone} onChange={onToggleDoneHandler} />
+      <input id={todo.id} type="checkbox" checked={todo.isDone} onClick={onToggleDoneHandler}/>
       <label htmlFor={todo.id}>
-        <span>{todo.text}</span>
+        <span className={todo.isDone ? 'todo-inactive' : ''}>{todo.text}</span>
         <svg viewBox="0 0 100 100">
           <path d="M 10 10 L 90 90" />
           <path d="M 90 10 L 10 90" />

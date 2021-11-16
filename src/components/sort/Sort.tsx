@@ -13,7 +13,7 @@ export default function Sort(): JSX.Element {
   const activeTodos = todos.filter((todo: ITodo) => !todo.isDone);
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    dispatch(UpdateSortSettings({ ...searchSettings, searchText: e.target.value }));
+    dispatch(UpdateSortSettings({ ...searchSettings, searchText: e.target.value.toUpperCase() }));
     dispatch(UpdateVisibleTodos());
   };
 
@@ -67,6 +67,7 @@ export default function Sort(): JSX.Element {
         value={searchSettings.searchText}
         onChange={onInputChange}
         placeholder="Type to search"
+        maxLength={10}
       />
 
     </div>

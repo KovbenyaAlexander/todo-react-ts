@@ -1,17 +1,23 @@
+@import '../../variables.scss';
+
 .form{
   display: flex;
   justify-content: center;
 
   &__input{
-    width: 394px;
-    background-color: #25273c;
+    width: 450px;
+    background-color: $darkGrey;
     outline: none;
-    color: #7c7e93;
+    color: $grey;
     margin-top: 40px;
     height: 50px;
     border: none;
     border-radius: 5px;
     padding-left: 40px;
     font-family: 'Poppins', sans-serif;
+
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.7);
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.7);
   }
 }

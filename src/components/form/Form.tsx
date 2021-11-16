@@ -31,7 +31,13 @@ export default function Form(): JSX.Element {
 
   return (
     <form className="form" onSubmit={onSubmitHandler}>
-      <input className="form__input" value={inputValue} onChange={onInputChange} placeholder="Create a new todo..." />
+      <input
+        maxLength={20}
+        className="form__input"
+        value={inputValue}
+        onChange={onInputChange}
+        placeholder="Create a new todo..."
+      />
     </form>
   );
 }
