@@ -1,5 +1,5 @@
 {
-  "name": "pointing-poker",
+  "name": "todo-react-ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KovbenyaAlexander/pointing-poker.git"
+    "url": "git+https://github.com/KovbenyaAlexander/todo-react-ts.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KovbenyaAlexander/pointing-poker/issues"
+    "url": "https://github.com/KovbenyaAlexander/todo-react-ts/issues"
   },
-  "homepage": "https://github.com/KovbenyaAlexander/pointing-poker#readme",
+  "homepage": "https://github.com/KovbenyaAlexander/todo-react-ts#readme",
   "devDependencies": {
     "@types/materialize-css": "^1.0.11",
     "@types/react": "^17.0.20",
