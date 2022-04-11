@@ -46,7 +46,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
         return {
           ...state,
           visibleTodos: state.todos.filter(
-            (todo: ITodo) => state.searchSettings.searchText === todo.text.slice(0, state.searchSettings.searchText.length).toUpperCase(),
+            (todo: ITodo) => todo.text.toUpperCase().includes(state.searchSettings.searchText.toUpperCase()),
           ),
         };
       }
@@ -55,7 +55,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
         return {
           ...state,
           visibleTodos: state.todos.filter((todo: ITodo) => {
-            if (state.searchSettings.searchText === todo.text.slice(0, state.searchSettings.searchText.length).toUpperCase()
+            if (todo.text.toUpperCase().includes(state.searchSettings.searchText.toUpperCase())
             && !todo.isDone) {
               return true;
             }
@@ -68,7 +68,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
         return {
           ...state,
           visibleTodos: state.todos.filter((todo: ITodo) => {
-            if (state.searchSettings.searchText === todo.text.slice(0, state.searchSettings.searchText.length).toUpperCase()
+            if (todo.text.toUpperCase().includes(state.searchSettings.searchText.toUpperCase())
             && todo.isDone) {
               return true;
             }

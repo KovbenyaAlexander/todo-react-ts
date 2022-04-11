@@ -19,6 +19,8 @@
   -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.7);
   box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.7);
 
+  font-size: 15px;
+
   &__info, &__search{
     width: 110px;
   }
@@ -36,6 +38,7 @@
     cursor: pointer;
     color: $grey;
     font-family: 'Poppins', sans-serif;
+    font-size: 15px;
     &-active{
       color: $blue;
       font-weight: bold;
@@ -55,6 +58,6 @@
     border-bottom-right-radius: 5px;
     outline: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
   }
 }
