@@ -3,17 +3,17 @@ import { IStore } from '../types/store-types';
 export const initialStore: IStore = {
   todos: [
     {
-      text: "Drag'n'Drop",
+      text: 'delectus aut autem',
       id: '1',
       isDone: false,
     },
     {
-      text: 'ghj',
+      text: 'quis ut nam facilis et officia qui',
       id: '2',
       isDone: false,
     },
     {
-      text: 'tyu',
+      text: 'fugiat veniam minus',
       id: '3',
       isDone: false,
     },
@@ -21,17 +21,17 @@ export const initialStore: IStore = {
   ],
   visibleTodos: [
     {
-      text: "Drag'n'Drop",
+      text: 'delectus aut autem',
       id: '1',
       isDone: false,
     },
     {
-      text: 'ghj',
+      text: 'quis ut nam facilis et officia qui',
       id: '2',
       isDone: false,
     },
     {
-      text: 'tyu',
+      text: 'fugiat veniam minus',
       id: '3',
       isDone: false,
     },
